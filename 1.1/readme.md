@@ -11,7 +11,7 @@ k3d cluster create -a 2
 docker run cassielu123/printtime-app:latest
 
 # Create the deployment
-kubectl create deployment timeprinter-dep --image=cassielu123/printtime-app:latest
+kubectl apply -f  manifests
 
 # Check pods
 kubectl get pods

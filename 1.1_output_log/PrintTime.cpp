@@ -35,6 +35,8 @@ int main() {
         this_thread::sleep_for(chrono::seconds(5));
         time_t secs = system_clock::to_time_t(system_clock::now());
         cout << put_time(localtime(&secs), "%c") << " " << random_str << endl;
-        //endl forces the output to be flushed immediately
+        //endl forces the output to be flushed immediately; if not use endl but use /n, 
+        // the program can work well in local machine, but just print the
+        //first timestamp in kubernetes logs
     }
 }

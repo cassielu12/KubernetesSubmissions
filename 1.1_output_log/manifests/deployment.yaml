@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: timeprinter-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: timeprinter
+  template:
+    metadata:
+      labels:
+        app: timeprinter
+    spec:
+      containers:
+        - name: timeprinter
+          image: cassielu123/printtime-app:latest

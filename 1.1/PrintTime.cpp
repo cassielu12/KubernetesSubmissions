@@ -34,6 +34,7 @@ int main() {
     while (true) {
         this_thread::sleep_for(chrono::seconds(5));
         time_t secs = system_clock::to_time_t(system_clock::now());
-        cout << put_time(localtime(&secs), "%c") << " " << random_str << std::endl;
+        cout << put_time(localtime(&secs), "%c") << " " << random_str << endl;
+        //endl forces the output to be flushed immediately
     }
 }
